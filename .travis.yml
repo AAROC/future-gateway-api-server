@@ -1,0 +1,33 @@
+# We need to test :
+# worker node installation
+sudo: required
+
+language: bash
+
+env:
+  - OSDIR=u1404
+  - OSDIR=centos6
+
+services:
+  - docker
+
+before_install:
+  - git clone --recursive https://github.com/AAROC/DevOps
+
+# Build the container
+install:
+  - docker build -t fgAPIServer -f Dockerfile.$OSDIR .
+
+script:
+  - docker run -t -P fgAPIServer ansible all -m setup -c local
+# check that ansible is working
+
+after_success:
+
+after_failure:
+
+notifications:
+  slack:
+    rooms:
+      - africa-arabia-roc:qn956vBmV7VIyJ1Xod4Cmnd5#devops
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
