@@ -1,7 +1,7 @@
 
 [![Build Status](https://travis-ci.org/AAROC/future-gateway-api-server.svg?branch=master)](https://travis-ci.org/AAROC/future-gateway-api-server)
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000?style=plastic)]()
+ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # future-gateway-api-server
 
