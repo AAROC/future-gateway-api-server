@@ -1,0 +1,8 @@
+# Docker file for UMD User Interface
+#
+FROM aaroc/ansiblecontainer:u1404
+MAINTAINER Bruce Becker <bbecker@csir.co.za>
+WORKDIR /root/
+RUN ["git","clone","--recursive","https://github.com/AAROC/DevOps.git"]
+WORKDIR /root/DevOps/Ansible
+RUN ansible-playbook -c local -i /etc/ansible/hosts FutureGatewayAPIServer.yml --skip-tags="slack"

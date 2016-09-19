@@ -1,4 +1,8 @@
 
+[![Build Status](https://travis-ci.org/AAROC/future-gateway-api-server.svg?branch=master)](https://travis-ci.org/AAROC/future-gateway-api-server)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000?style=plastic)]()
+
 # future-gateway-api-server
 
 Docker container for the FG API server.
