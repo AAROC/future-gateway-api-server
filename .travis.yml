@@ -7,6 +7,7 @@ language: bash
 env:
   - OSDIR=u1404
   - OSDIR=centos6
+  - OSDIR=centos7
 
 services:
   - docker
@@ -16,7 +17,7 @@ before_install:
 
 # Build the container
 install:
-  - docker build -t fgAPIServer -f Dockerfile.$OSDIR .
+  - docker build -t fgapiserver -f Dockerfile.$OSDIR .
 
 script:
   - docker run -t -P fgAPIServer ansible all -m setup -c local
