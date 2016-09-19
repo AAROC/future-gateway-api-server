@@ -2,7 +2,11 @@
 #
 FROM aaroc/ansiblecontainer:u1404
 MAINTAINER Bruce Becker <bbecker@csir.co.za>
+EXPOSE 8888:8888
 WORKDIR /root/
 RUN ["git","clone","--recursive","https://github.com/AAROC/DevOps.git"]
 WORKDIR /root/DevOps/Ansible
-RUN ansible-playbook -c local -i /etc/ansible/hosts FutureGatewayAPIServer.yml --skip-tags="slack"
+RUN ansible-playbook -c local -i localhost, FutureGatewayAPIServer.yml
+rm -rf /root/DevOps
+WORKDIR /tmp/apiserver
+ENTRYPOINT ["python","fgapiserver.py"]
