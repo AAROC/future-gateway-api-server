@@ -20,7 +20,7 @@ install:
   - docker build -t fgapiserver -f Dockerfile.$OSDIR .
 
 script:
-  - docker run -t -P fgAPIServer ansible all -m setup -c local
+  - docker run -t -P fgapiserver ansible all -m setup -c local
 # check that ansible is working
 
 after_success:
